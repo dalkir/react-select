@@ -110,6 +110,7 @@ const Select = React.createClass({
 			clearable: true,
 			clearAllText: 'Clear all',
 			clearValueText: 'Clear value',
+			controlClassName: '',
 			delimiter: ',',
 			disabled: false,
 			escapeClearsValue: true,
