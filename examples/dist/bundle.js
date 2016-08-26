@@ -214,6 +214,7 @@ var Select = React.createClass({
 		clearAllText: React.PropTypes.string, // title for the "clear" control when multi: true
 		clearValueText: React.PropTypes.string, // title for the "clear" control
 		clearable: React.PropTypes.bool, // should it be possible to reset value
+		controlClassName: React.PropTypes.string, // className for the select control
 		delimiter: React.PropTypes.string, // delimiter to use to join multiple values
 		disabled: React.PropTypes.bool, // whether the Select is disabled or not
 		filterOption: React.PropTypes.func, // method to filter a single option  (option, filterString)
@@ -258,6 +259,7 @@ var Select = React.createClass({
 			className: undefined,
 			clearAllText: 'Clear all',
 			clearValueText: 'Clear value',
+			controlClassName: '',
 			clearable: true,
 			delimiter: ',',
 			disabled: false,
@@ -1113,7 +1115,7 @@ var Select = React.createClass({
 			React.createElement('input', { type: 'hidden', ref: 'value', name: this.props.name, value: this.state.value, disabled: this.props.disabled }),
 			React.createElement(
 				'div',
-				{ className: 'Select-control', ref: 'control', onKeyDown: this.handleKeyDown, onMouseDown: this.handleMouseDown, onTouchEnd: this.handleMouseDown },
+				{ className: 'Select-control ' + this.props.controlClassName, ref: 'control', onKeyDown: this.handleKeyDown, onMouseDown: this.handleMouseDown, onTouchEnd: this.handleMouseDown },
 				value,
 				input,
 				loading,
